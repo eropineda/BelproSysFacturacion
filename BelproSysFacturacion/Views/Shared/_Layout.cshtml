@@ -26,16 +26,15 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
                         
-                        <div class="btn-group">
-                          <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Parametros
-                          </button>
-                          <ul class="dropdown-menu">
-                            <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="County" asp-action="Index">Municipios</a>
-                            </li>
-                          </ul>
-                        </div>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" href="#">Parametros</a>
+                            <ul class="dropdown-menu">
+                              <li><a class="dropdown-item" asp-area="" asp-controller="County" asp-action="Index">Municipio</a></li>
+                              <li><a class="dropdown-item" href="#">Departamento</a></li>
+                              <li><a class="dropdown-item" href="#">Pais</a></li>
+                            </ul>
+                        </li>
+
 
                     </ul>
                     <partial name="_LoginPartial" />

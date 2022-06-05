@@ -1,20 +1,91 @@
-﻿@model List<BelproSysFacturacion.Models.CountyModels>
+﻿@model IEnumerable<BelproSysFacturacion.Models.CountyModels>
 
 @{
      ViewData["Title"] = "Lista de Municipios";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+     Layout = "~/Views/Shared/_Layout.cshtml";
 
 }
 
+ @if (TempData["mensaje"] != null)
+            {
+           
 
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                  @TempData["mensaje"]
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+
+
+
+
+            }
+
+
+   
 
  <div class="row">
         <div class="col-md-6">
-            <h3 class="title-5 m-b-35">Lista de Munipios</h3>
+            <h3 class="title-5 m-b-35">Lista de Municipios</h3>
         </div>
         <div class="col-md-6">
-            <a class="btn btn-success d-block" asp-action="Create" asp-controller="CustomersTypes">Agregar</a>
+            <a class="btn btn-success d-block" asp-action="Create" asp-controller="County">Agregar</a>
         </div>
 
     </div>
+
+ <div class="row">
+        <div class="col-md-12">
+            @*@if (Model != null)*@
+            @if (Model.Count() > 0)
+            {
+                <div class="table-responsive table-responsive-data2">
+                    <table class="table table-data2">
+                        <thead>
+                            <tr>
+                       
+                                <td>@Html.DisplayNameFor(m => m.Id)</td>
+                                <td>@Html.DisplayNameFor(m => m.CountyDescrip)</td>
+                                <td>@Html.DisplayNameFor(m => m.UserEnrollmentInsert)</td>
+                                <td>@Html.DisplayNameFor(m => m.EnrollmentDateInsert)</td>
+                                <td>@Html.DisplayNameFor(m => m.UserEnrollmentModify)</td>
+                                <td>@Html.DisplayNameFor(m => m.EnrollmentDateModify)</td>
+                                <td>Acciones</td>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                             @foreach (var item in Model)
+                            {
+                            <tr class="tr-shadow">
+                                <td>@item.Id</td>
+                                <td>@item.CountyDescrip</td>
+                                <td>@item.UserEnrollmentInsert </td>
+                                <td>@item.EnrollmentDateInsert.ToString("dd/MM/yyyy") </td>
+                                <td>@item.UserEnrollmentModify </td>
+                                <td>@item.EnrollmentDateModify.ToString("dd/MM/yyyy") </td>
+                                <td>
+                                    <a asp-controller="County" asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">Editar</a>
+                                    <a asp-controller="County" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Eliminar</a>
+                                </td>
+                            </tr>
+                                    }
+                        </tbody>
+
+                    </table>
+                </div>
+                }
+            else
+            {
+                @*<span class="label label-default">Por defecto</span>*@
+                <p> - </p>
+
+                <div class="alert alert-info col-md-12">
+                    <strong>Info!</strong> No existen registros que mostrar para los tipos de clientes.
+                </div>
+
+            }
+
+        </div>
+
+ </div>
 

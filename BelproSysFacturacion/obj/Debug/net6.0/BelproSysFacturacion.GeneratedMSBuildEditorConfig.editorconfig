@@ -19,6 +19,18 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/PROYECTOS_ASPNET/BelproSysFacturacion/BelproSysFacturacion/Views/County/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291bnR5XENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/PROYECTOS_ASPNET/BelproSysFacturacion/BelproSysFacturacion/Views/County/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291bnR5XERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/PROYECTOS_ASPNET/BelproSysFacturacion/BelproSysFacturacion/Views/County/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291bnR5XEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/PROYECTOS_ASPNET/BelproSysFacturacion/BelproSysFacturacion/Views/County/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291bnR5XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

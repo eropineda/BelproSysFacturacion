@@ -1,0 +1,63 @@
+﻿@model  BelproSysFacturacion.Models.CountyModels
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <h3 class="title-5 m-b-35">Modificar Municipio</h3>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <form method="post" asp-action="DeleteCounty">
+             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+             <input type="hidden" asp-for="Id" />
+
+            <div class="mb-3 mt-3">
+                <label asp-for="CountyDescrip" class="form-label">Descripción:</label>
+                <input asp-for="CountyDescrip" class="form-control" placeholder="Descripcion del Municipio" disabled>
+                <span asp-validation-for="CountyDescrip" class="text-danger"> </span>
+
+            </div>
+
+            <div class="mb-3 mt-3">
+                <label asp-for="UserEnrollmentInsert" class="form-label">Creado por:</label>
+                <input asp-for="UserEnrollmentInsert" class="form-control" placeholder="Creado por:" disabled>
+                <span asp-validation-for="UserEnrollmentInsert" class="text-danger"> </span>
+            </div>
+            <div class="mb-3 mt-3">
+                <label asp-for="EnrollmentDateInsert" class="form-label">Fecha de Creado:</label>
+                <input asp-for="EnrollmentDateInsert" class="form-control" placeholder="Fecha de Creado:" disabled>
+                <span asp-validation-for="EnrollmentDateInsert" class="text-danger"> </span>
+            </div>
+
+            <div class="mb-3 mt-3">
+                <label asp-for="UserEnrollmentModify" class="form-label">Creado por:</label>
+                <input asp-for="UserEnrollmentModify" class="form-control" placeholder="Modicado por:" disabled>
+                <span asp-validation-for="UserEnrollmentModify" class="text-danger"> </span>
+            </div>
+            <div class="mb-3 mt-3">
+                <label asp-for="EnrollmentDateModify" class="form-label">Fecha de Creado:</label>
+                <input asp-for="EnrollmentDateModify" class="form-control" placeholder="Fecha de Modificado:" disabled>
+                <span asp-validation-for="EnrollmentDateModify" class="text-danger"> </span>
+            </div>
+
+            
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-success" />
+            </div>
+
+
+        </form>
+    </div>
+</div>
+
+ @section Scripts{ 
+
+    @{ <partial name="_ValidationScriptsPartial" /> }
+
+}

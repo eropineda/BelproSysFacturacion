@@ -20,7 +20,7 @@ namespace BelproSysFacturacion.Models
         public String UserEnrollmentInsert { get; set; }
 
 
-        [Required(ErrorMessage = "Ingresar la Fecha de creado del tipo de cliente.")]
+        [Required(ErrorMessage = "Ingresar la Fecha de creado.")]
         [DataType(DataType.Date)]
         //[DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
         [Display(Name = "Fecha de Creado")]
@@ -33,7 +33,7 @@ namespace BelproSysFacturacion.Models
         public String UserEnrollmentModify { get; set; }
 
 
-        [Required(ErrorMessage = "Ingresar la Fecha de Modificado del tipo de cliente.")]
+        [Required(ErrorMessage = "Ingresar la Fecha de Modificado.")]
         [DataType(DataType.Date)]
         //[DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
         [Display(Name = "Fecha de Modificado")]
