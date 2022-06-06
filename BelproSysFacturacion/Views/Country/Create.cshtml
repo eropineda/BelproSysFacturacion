@@ -1,0 +1,63 @@
+﻿@model BelproSysFacturacion.Models.CountryModels
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Paises</h1>
+
+<h4>Lista de Paises</h4>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CountryISO" class="control-label"></label>
+                <input asp-for="CountryISO" class="form-control" />
+                <span asp-validation-for="CountryISO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CountryName" class="control-label"></label>
+                <input asp-for="CountryName" class="form-control" />
+                <span asp-validation-for="CountryName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserEnrollmentInsert" class="control-label"></label>
+                <input asp-for="UserEnrollmentInsert" class="form-control" />
+                <span asp-validation-for="UserEnrollmentInsert" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EnrollmentDateInsert" class="control-label"></label>
+                <input asp-for="EnrollmentDateInsert" class="form-control" />
+                <span asp-validation-for="EnrollmentDateInsert" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserEnrollmentModify" class="control-label"></label>
+                <input asp-for="UserEnrollmentModify" class="form-control" />
+                <span asp-validation-for="UserEnrollmentModify" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EnrollmentDateModify" class="control-label"></label>
+                <input asp-for="EnrollmentDateModify" class="form-control" />
+                <span asp-validation-for="EnrollmentDateModify" class="text-danger"></span>
+                <br>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                   <input type="submit" value="Create" class="btn btn-success" />
+                </div>
+                
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<div>
+    <br>
+    <a asp-action="Index">Regresar a la Lista</a>
+</div>
+

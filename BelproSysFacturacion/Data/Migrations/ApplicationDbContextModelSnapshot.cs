@@ -22,6 +22,38 @@ namespace BelproSysFacturacion.Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
+            modelBuilder.Entity("BelproSysFacturacion.Models.CountryModels", b =>
+                {
+                    b.Property<string>("CountryISO")
+                        .HasMaxLength(3)
+                        .HasColumnType("nvarchar(3)");
+
+                    b.Property<string>("CountryName")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<DateTime>("EnrollmentDateInsert")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("EnrollmentDateModify")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UserEnrollmentInsert")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UserEnrollmentModify")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("CountryISO");
+
+                    b.ToTable("CountryModels");
+                });
+
             modelBuilder.Entity("BelproSysFacturacion.Models.CountyModels", b =>
                 {
                     b.Property<int>("Id")

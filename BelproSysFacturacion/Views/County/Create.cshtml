@@ -23,13 +23,14 @@
 
             <div class="mb-3 mt-3">
                 <label asp-for="UserEnrollmentInsert" class="form-label">Creado por:</label>
-                <input asp-for="UserEnrollmentInsert" class="form-control" placeholder="Creado por:">
+                <input asp-for="UserEnrollmentInsert" class="form-control" placeholder="Creado por:"> 
                 <span asp-validation-for="UserEnrollmentInsert" class="text-danger"> </span>
             </div>
             <div class="mb-3 mt-3">
                 <label asp-for="EnrollmentDateInsert" class="form-label">Fecha de Creado:</label>
-                <input asp-for="EnrollmentDateInsert" class="form-control" placeholder="Fecha de Creado:">
+                <input asp-for="EnrollmentDateInsert" class="form-control" placeholder="Fecha de Creado:" >
                 <span asp-validation-for="EnrollmentDateInsert" class="text-danger"> </span>
+           @*     value=@DateTime.Now*@
             </div>
 
             <div class="mb-3 mt-3">
@@ -52,6 +53,12 @@
         </form>
     </div>
 </div>
+
+<div>
+    <br>
+    <a asp-action="Index">Regresar a la Lista</a>
+</div>
+
 
  @section Scripts{ 
 

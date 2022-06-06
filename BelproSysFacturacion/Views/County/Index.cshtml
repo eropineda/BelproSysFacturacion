@@ -24,11 +24,13 @@
    
 
  <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-10">
             <h3 class="title-5 m-b-35">Lista de Municipios</h3>
         </div>
-        <div class="col-md-6">
-            <a class="btn btn-success d-block" asp-action="Create" asp-controller="County">Agregar</a>
+        <div class="col-md-2">
+            <a class="btn btn-success d-block" asp-action="Create" asp-controller="County">
+                <i class="bi bi-plus-circle-fill" style="font-size: 1rem; color: white" ></i>  Agregar</a>
+            
         </div>
 
     </div>
@@ -64,8 +66,10 @@
                                 <td>@item.UserEnrollmentModify </td>
                                 <td>@item.EnrollmentDateModify.ToString("dd/MM/yyyy") </td>
                                 <td>
-                                    <a asp-controller="County" asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">Editar</a>
-                                    <a asp-controller="County" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Eliminar</a>
+                                    <a asp-controller="County" asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">
+                                        <i class="bi bi-pencil-fill" style="font-size: 1rem; color: black" ></i></a>
+                                    <a asp-controller="County" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">
+                                        <i class="bi bi-trash3-fill" style="font-size: 1rem; color: white" ></i></a>
                                 </td>
                             </tr>
                                     }
@@ -78,6 +82,7 @@
             {
                 @*<span class="label label-default">Por defecto</span>*@
                 <p> - </p>
+               
 
                 <div class="alert alert-info col-md-12">
                     <strong>Info!</strong> No existen registros que mostrar para los tipos de clientes.
