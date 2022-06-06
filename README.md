@@ -1,6 +1,13 @@
-# NuevavidaGestionesCorreos 
+# BeltroSysFaturacion 
 
 - This application is for managing sales, products
+
+
+## languages
+- ASP.net Core 6
+- Entity Framework
+- SQL Server
+- MVC
 
 ## Description
 
