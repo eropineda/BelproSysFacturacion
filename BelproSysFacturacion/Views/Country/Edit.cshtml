@@ -1,64 +1,58 @@
-﻿@model  BelproSysFacturacion.Models.CountryModels
+﻿@model BelproSysFacturacion.Models.CountryModels
+
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Edit";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
+<h4>Modificar País</h4>
+<hr />
 <div class="row">
     <div class="col-md-12">
-        <h3 class="title-5 m-b-35">Modificar Municipio</h3>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-md-12">
-        <form method="post" asp-action="Edit">
-             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="mb-3 mt-3">
-                <label asp-for="CountryName" class="form-label">Descripción:</label>
-                <input asp-for="CountryName" class="form-control" placeholder="Descripcion del Municipio">
-                <span asp-validation-for="CountryName" class="text-danger"> </span>
-
-            </div>
-
-            <div class="mb-3 mt-3">
-                <label asp-for="UserEnrollmentInsert" class="form-label">Creado por:</label>
-                <input asp-for="UserEnrollmentInsert" class="form-control" placeholder="Creado por:">
-                <span asp-validation-for="UserEnrollmentInsert" class="text-danger"> </span>
-            </div>
-            <div class="mb-3 mt-3">
-                <label asp-for="EnrollmentDateInsert" class="form-label">Fecha de Creado:</label>
-                <input asp-for="EnrollmentDateInsert" class="form-control" placeholder="Fecha de Creado:">
-                <span asp-validation-for="EnrollmentDateInsert" class="text-danger"> </span>
-            </div>
-
-            <div class="mb-3 mt-3">
-                <label asp-for="UserEnrollmentModify" class="form-label">Creado por:</label>
-                <input asp-for="UserEnrollmentModify" class="form-control" placeholder="Modicado por:">
-                <span asp-validation-for="UserEnrollmentModify" class="text-danger"> </span>
-            </div>
-            <div class="mb-3 mt-3">
-                <label asp-for="EnrollmentDateModify" class="form-label">Fecha de Creado:</label>
-                <input asp-for="EnrollmentDateModify" class="form-control" placeholder="Fecha de Modificado:">
-                <span asp-validation-for="EnrollmentDateModify" class="text-danger"> </span>
-            </div>
-
-            
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="CountryISO" />
             <div class="form-group">
-                <input type="submit" value="Guardar" class="btn btn-success" />
+                <label asp-for="CountryName" class="control-label"></label>
+                <input asp-for="CountryName" class="form-control" />
+                <span asp-validation-for="CountryName" class="text-danger"></span>
             </div>
-
-
+            <div class="form-group">
+                 <br />
+                <label asp-for="UserEnrollmentInsert" class="control-label"></label>
+                <input asp-for="UserEnrollmentInsert" class="form-control" />
+                <span asp-validation-for="UserEnrollmentInsert" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                 <br />
+                <label asp-for="EnrollmentDateInsert" class="control-label"></label>
+                <input asp-for="EnrollmentDateInsert" class="form-control" />
+                <span asp-validation-for="EnrollmentDateInsert" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                 <br />
+                <label asp-for="UserEnrollmentModify" class="control-label"></label>
+                <input asp-for="UserEnrollmentModify" class="form-control" />
+                <span asp-validation-for="UserEnrollmentModify" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                 <br />
+                <label asp-for="EnrollmentDateModify" class="control-label"></label>
+                <input asp-for="EnrollmentDateModify" class="form-control" />
+                <span asp-validation-for="EnrollmentDateModify" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                 <br />
+                <input type="submit" value="Save" class="btn btn-primary" />
+                 <a class="btn btn-secondary " asp-action="Index" asp-controller="Country">Cancelar</a>
+            </div>
         </form>
     </div>
 </div>
-    <br>
-    <a asp-action="Index">Regresar a la Lista</a>
+
+<div>
+    <br />
+    <a asp-action="Index">Regresar a la lista</a>
 </div>
-
- @section Scripts{ 
-
-    @{ <partial name="_ValidationScriptsPartial" /> }
-
-}
 

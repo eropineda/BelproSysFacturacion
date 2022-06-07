@@ -1,0 +1,78 @@
+﻿@model IEnumerable<BelproSysFacturacion.Models.StateModel>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+        <div class="col-md-10">
+            
+            <h3 class="title-5 m-b-35">Lista de Departamentos </h3>
+           
+        </div>
+        <div class="col-md-2">
+            <a class="btn btn-success d-block" asp-action="Create" asp-controller="Country">
+                 <i class="bi bi-plus-circle-fill" style="font-size: 1rem; color: white" ></i>  Agregar</a>
+        </div>
+
+    </div>
+
+ <div class="row">
+        <div class="col-md-12">
+               <br>
+          
+            @if (Model.Count() > 0)
+            {
+                <div class="table-responsive table-responsive-data2">
+                    <table class="table table-data2">
+                        <thead>
+                            <tr>
+                       
+                                <td>@Html.DisplayNameFor(m => m.StateISO)</td>
+                                <td>@Html.DisplayNameFor(m => m.StateSecundaryCodeISO)</td>
+                                <td>@Html.DisplayNameFor(m => m.StateDescrip)</td>
+                                <td>@Html.DisplayNameFor(m => m.UserEnrollmentInsert)</td>
+                                <td>@Html.DisplayNameFor(m => m.EnrollmentDateInsert)</td>
+                                <td>@Html.DisplayNameFor(m => m.UserEnrollmentModify)</td>
+                                <td>@Html.DisplayNameFor(m => m.EnrollmentDateModify)</td>
+                                <td>Acciones</td>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                             @foreach (var item in Model)
+                            {
+                            <tr class="tr-shadow">
+                                <td>@item.StateISO</td>
+                                <td>@item.StateSecundaryCodeISO</td>
+                                <td>@item.StateDescrip</td>
+                                <td>@item.UserEnrollmentInsert </td>
+                                <td>@item.EnrollmentDateInsert.ToString("dd/MM/yyyy") </td>
+                                <td>@item.UserEnrollmentModify </td>
+                                <td>@item.EnrollmentDateModify.ToString("dd/MM/yyyy") </td>
+                                <td>
+                                    <a asp-controller="Country" asp-action="Edit"  asp-route-StateISO="@item.StateISO" class="btn btn-warning"><i class="bi bi-pencil-fill" style="font-size: 1rem; color: black" ></i> </a>
+                                    <a asp-controller="Country" asp-action="Delete" asp-route-StateISO="@item.StateISO" class="btn btn-danger"><i class="bi bi-trash3-fill" style="font-size: 1rem; color: white" ></i></a>
+                                </td>
+                            </tr>
+                                    }
+                        </tbody>
+
+                    </table>
+                </div>
+                }
+            else
+            {
+          
+                <p>.</p>
+                <div class="alert alert-info col-md-12">
+                    <strong>Info!</strong> No existen registros que mostrar para los Paises.
+                </div>
+
+            }
+
+        </div>
+
+ </div>
+

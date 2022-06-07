@@ -16,6 +16,7 @@ namespace BelproSysFacturacion.Data
 
         public DbSet<CountyModels> CountyModels { get; set; }
         public DbSet<CountryModels> CountryModels { get; set; }
+        public DbSet<StateModel> StateModels { get; set; }
 
     }
 }

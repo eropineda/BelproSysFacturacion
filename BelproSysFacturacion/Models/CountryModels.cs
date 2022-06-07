@@ -17,6 +17,13 @@ namespace BelproSysFacturacion.Models
         public string CountryName { get; set; }
 
 
+
+        [Required]
+        [Display(Name = "Código de País")]
+        public ICollection<StateModel> StateModel { get; set; }
+
+
+
         [Required(ErrorMessage = "Ingresar el usuario que crea el registro.")]
         [StringLength(100)]
         [Display(Name = "Creado por")]

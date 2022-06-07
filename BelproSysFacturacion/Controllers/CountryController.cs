@@ -51,17 +51,17 @@ namespace BelproSysFacturacion.Controllers
 
         //http get edit
         [HttpGet]
-        public IActionResult Edit(string CountryISO)
+        public async Task<IActionResult> Edit(string? CountryISO)
         {
-            //if (CountryISO == null)
-            //{
-            //    return NotFound();
+            if (CountryISO == null)
+            {
+                return NotFound();
 
-            //}
+            }
 
-            //    // //obtener Pais
+            //obtener Pais
 
-            var vCountry= _Context.CountryModels.Find(CountryISO);
+            var vCountry= await _Context.CountryModels.FindAsync(CountryISO);
 
             if (vCountry == null)
             {
@@ -81,7 +81,6 @@ namespace BelproSysFacturacion.Controllers
         {
             if (ModelState.IsValid)
             {
-
                 _Context.CountryModels.Update(country);
                 await _Context.SaveChangesAsync();
 
@@ -92,6 +91,56 @@ namespace BelproSysFacturacion.Controllers
             }
 
             return View();
+        }
+
+
+        //http get edit
+        [HttpGet]
+        public async Task<IActionResult> Delete(string? CountryISO)
+        {
+            if (CountryISO == null)
+            {
+                return NotFound();
+
+            }
+
+            //obtener Pais
+
+            var vCountry = await _Context.CountryModels.FindAsync(CountryISO);
+
+            if (vCountry == null)
+            {
+                return NotFound();
+            }
+
+            return View(vCountry);
+            // return View();
+        }
+
+        //Http Post Delete 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteCountry(string? CountryISO)
+        {
+            //obtener el libro por id
+
+            var vDeleteCounty = await _Context.CountryModels.FindAsync(CountryISO);
+
+
+            if (vDeleteCounty == null)
+            {
+                return NotFound();
+            }
+
+            _Context.CountryModels.Remove(vDeleteCounty);
+            await _Context.SaveChangesAsync();
+
+            TempData["mensaje"] = "Registro Eliminado Correctamente";
+            return RedirectToAction("Index");
+
+
+
+
         }
 
 
